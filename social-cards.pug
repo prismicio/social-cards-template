@@ -1,0 +1,88 @@
+
+mixin generalCard(card)
+  meta(property="og:title" content=card.getText('card_title'))
+  meta(property="og:type", content="article")
+  meta(property="og:url", content=pageUrl)
+  meta(property="og:image", content=card.getImage('card_image').url)
+  meta(property="og:description", content=card.getText('card_description'))
+  meta(property="article:section", content="Article Section")
+
+mixin productCard(card)
+  meta(property="og:title" content=card.getText('card_title'))
+  meta(property="og:description", content=card.getText('card_description'))
+  meta(property="og:image", content=card.getImage('card_image').url)
+  meta(property="og:type", content="product")
+  meta(property="product:price:amount", content=card.getNumber('card_amount'))
+  meta(property="product:price:currency", content=card.getText('card_currency'))
+
+mixin placeCard(card)
+  meta(property="og:title" content=card.getText('card_title'))
+  meta(property="og:type", content="place")
+  meta(property="og:description", content=card.getText('card_description'))
+  meta(property="place:location:latitude", content=card.getGeoPoint("coordinates").latitude)
+  meta(property="place:location:longitude", content=card.getGeoPoint("coordinates").longitude)
+
+mixin twitterSummaryCard(card)
+  meta(name='twitter:card', content='summary')
+  meta(name='twitter:site', content=card.getText('twitter_site'))
+  meta(name='twitter:title', content=card.getText('card_title'))
+  meta(name='twitter:description', content=card.getText('card_description'))
+  meta(name='twitter:image:src', content=card.getImage('card_image').url)
+
+mixin twitterSummaryLargeCard(card)
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name='twitter:site', content=card.getText('twitter_site'))
+  meta(name='twitter:creator', content=card.getText('twitter_creator'))
+  meta(name='twitter:title', content=card.getText('card_title'))
+  meta(name='twitter:description', content=card.getText('card_description'))
+  meta(name='twitter:image:src', content=card.getImage('card_image').url)
+
+mixin twitterAppCard(card)
+  meta(name='twitter:card', content='app')
+  meta(name='twitter:site', content=card.getText('twitter_site'))
+  meta(name='twitter:description', content=card.getText('card_description'))
+  meta(name='twitter:app:country', content=card.getText('app_country'))
+  meta(name='twitter:app:name:iphone', content=card.getText('iphone_name'))
+  meta(name='twitter:app:id:iphone', content=card.getText('iphone_id'))
+  meta(name='twitter:app:url:iphone', content=card.getText('iphone_url'))
+  meta(name='twitter:app:name:ipad', content=card.getText('ipad_name'))
+  meta(name='twitter:app:id:ipad', content=card.getText('ipad_id'))
+  meta(name='twitter:app:url:ipad', content=card.getText('ipad_url'))
+  meta(name='twitter:app:name:googleplay', content=card.getText('android_name'))
+  meta(name='twitter:app:id:googleplay', content=card.getText('android_id'))
+  meta(name='twitter:app:url:googleplay', content=card.getText('android_url'))
+
+
+
+<meta name="twitter:card" content="app">
+<meta name="twitter:site" content="@TwitterDev">
+<meta name="twitter:description" content="Cannonball is the fun way to create and share stories and poems on your phone. Start with a beautiful image from the gallery, then choose words to complete the story and share it with friends.">
+<meta name="twitter:app:country" content="US">
+<meta name="twitter:app:name:iphone" content="Cannonball">
+<meta name="twitter:app:id:iphone" content="929750075">
+<meta name="twitter:app:url:iphone" content="cannonball://poem/5149e249222f9e600a7540ef">
+<meta name="twitter:app:name:ipad" content="Cannonball">
+<meta name="twitter:app:id:ipad" content="929750075">
+<meta name="twitter:app:url:ipad" content="cannonball://poem/5149e249222f9e600a7540ef">
+<meta name="twitter:app:name:googleplay" content="Cannonball">
+<meta name="twitter:app:id:googleplay" content="io.fabric.samples.cannonball">
+<meta name="twitter:app:url:googleplay" content="http://cannonball.fabric.io/poem/5149e249222f9e600a7540ef">
+
+
+if pageContent.getSliceZone('social-cards-all.social').slices
+  for slice in pageContent.getSliceZone('social-cards-all.social').slices
+    -var card = slice.value.toArray()[0]
+    case slice.sliceType
+      when 'general_card'
+        +generalCard(card)
+      when 'product_card'
+        +productCard(card)
+      when 'place_card'
+        +placeCard(card)
+      when 'twitter_summary'
+        +twitterSummaryCard(card)
+      when 'twitter_summary_large'
+        +twitterSummaryLargeCard(card)
+      when 'twitter_app'
+        +twitterAppCard(card)
+

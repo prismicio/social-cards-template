@@ -1,0 +1,282 @@
+{
+  "Social Cards" : {
+    "social" : {
+      "fieldset" : "Custom Social Cards...",
+      "type" : "Slices",
+      "config" : {
+        "choices" : {
+          "general_card" : {
+            "type" : "Group",
+            "fieldset" : "General Card",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "card_title" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Title"
+                  }
+                },
+                "card_description" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Description"
+                  }
+                },
+                "card_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "placeholder" : "Image",
+                    "constraint" : {
+                      "width" : 1200,
+                      "height" : 630
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "product_card" : {
+            "type" : "Group",
+            "fieldset" : "Product Card",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "card_title" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Title"
+                  }
+                },
+                "card_description" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Description"
+                  }
+                },
+                "card_amount" : {
+                  "type" : "Number",
+                  "config" : {
+                    "label" : "Amount"
+                  }
+                },
+                "card_currency" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Currency"
+                  }
+                },
+                "card_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "placeholder" : "Product Image"
+                  }
+                }
+              }
+            }
+          },
+          "place_card" : {
+            "type" : "Group",
+            "fieldset" : "Place Card",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "card_title" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Title"
+                  }
+                },
+                "card_description" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Description"
+                  }
+                },
+                "coordinates" : {
+                  "type" : "GeoPoint"
+                }
+              }
+            }
+          },
+          "twitter_summary" : {
+            "type" : "Group",
+            "fieldset" : "Twitter Summary",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "card_title" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Title"
+                  }
+                },
+                "card_description" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Description"
+                  }
+                },
+                "twitter_site" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Website",
+                    "placeholder" : "The Twitter @username the card should be attributed to."
+                  }
+                },
+                "card_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "placeholder" : "Image",
+                    "constraint" : {
+                      "height" : 120,
+                      "width" : 120
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "twitter_summary_large" : {
+            "type" : "Group",
+            "fieldset" : "Twitter Summary Large Image",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "card_title" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Title"
+                  }
+                },
+                "card_description" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Description"
+                  }
+                },
+                "twitter_site" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Website",
+                    "placeholder" : "The Twitter @username the card should be attributed to."
+                  }
+                },
+                "twitter_creator" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Creator",
+                    "placeholder" : "The Twitter @username of the content creator / author."
+                  }
+                },
+                "card_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "placeholder" : "Image",
+                    "constraint" : {
+                      "height" : 599,
+                      "width" : 1146
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "twitter_app" : {
+            "type" : "Group",
+            "fieldset" : "Twitter App",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "card_description" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Description"
+                  }
+                },
+                "twitter_site" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Username",
+                    "placeholder" : "The Twitter @username the card should be attributed to."
+                  }
+                },
+                "app_country" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Country",
+                    "placeholder" : "Region of this App (US, FR ...)"
+                  }
+                },
+                "iphone_name" : {
+                  "type" : "Text",
+                  "fieldset" : "iPhone",
+                  "config" : {
+                    "label" : "iPhone - Name",
+                    "placeholder" : "Name"
+                  }
+                },
+                "iphone_id" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "iPhone - ID",
+                    "placeholder" : "App ID"
+                  }
+                },
+                "iphone_url" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "iPhone - URL",
+                    "placeholder" : "App URL"
+                  }
+                },
+                "ipad_name" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "iPad - Name",
+                    "placeholder" : "Name"
+                  }
+                },
+                "ipad_id" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "iPad - ID",
+                    "placeholder" : "App ID"
+                  }
+                },
+                "ipad_url" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "iPad - URL",
+                    "placeholder" : "App URL"
+                  }
+                },
+                "android_name" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Android - Name",
+                    "placeholder" : "Name"
+                  }
+                },
+                "android_id" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Android - ID",
+                    "placeholder" : "App ID"
+                  }
+                },
+                "android_url" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Android - URL",
+                    "placeholder" : "App URL"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
